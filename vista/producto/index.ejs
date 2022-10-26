@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+<body style="background-color: rgb(200, 227, 227);">
+    <h1>Productos</h1>
+    <form action="/crud" method="post" >
+
+    id: <input type="number" id="txt_id" name="txt_id" placeholder="id" style="background-color: rgb(212, 252, 242);border-radius: 15px;"><br><br>
+
+    Descripcion: <input type="text" id="txt_descripcion" name="txt_descripcion" placeholder="descripcion"  style="background-color: rgb(212, 252, 242);border-radius: 15px;"><br><br>
+
+    Price: <input type="text" id="txt_price" name="txt_price" placeholder="price"  style="background-color: rgb(212, 252, 242);border-radius: 15px;"><br><br>
+
+    Count: <input type="text" id="txt_count" name="txt_count" placeholder="count"  style="background-color: rgb(212, 252, 242);border-radius: 15px;"><br><br>
+
+        <button type="submit" id="btn_crear" name="btn_crear" value="crear" style="background-color: rgb(130, 244, 130); border-radius: 20px;">Crear</button>
+        <button type="submit" id="btn_actualizar" name="btn_actualizar" value="actualizar" style="background-color: rgb(244, 221, 92); border-radius: 20px;">Actualizar</button>
+        <button type="submit" id="btn_borrar" name="btn_borrar" value="borrar" style="background-color: rgb(249, 132, 132);border-radius: 20px;">Borrar</button>
+    </form>
+    <br>
+    <table border="2px" style="position: relative; top: 40%;left: 40%;height: 190px; width: 170px;white-space: 10px;background-color:rgb(172, 200, 200) ;">
+        <br>
+        <thead>
+            <th>id</th>
+            <th>descripcion</th>
+            <th>price</th>
+            <th>count</th>
+        </thead>
+        <tbody>
+            <% resultado.forEach((productos) => { %>
+
+            <tr>
+                <td><%= productos.id %></td>
+                <td><%= productos.descripcion %></td>
+                <td><%= productos.price %></td>
+                <td><%= productos.count %></td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
